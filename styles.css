@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Tilt Neon", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(209, 220, 231);
+  gap: 20px;
+}
+
+.text-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+textarea {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px 0px #803636;
+}
+
+.add-button-container {
+  width: 75%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#add-note-btn {
+  border: none;
+  outline: none;
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  background-image: linear-gradient(90deg, #ed6ea0, #ec8c69, #f7186a, #fbb03b);
+  background-size: 300% 100%;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px 0 rgba(7, 6, 7, 0.75);
+  transition: all 0.6s ease-in-out;
+}
+
+#add-note-btn:hover {
+  background-image: linear-gradient(90deg, #f7186a, #ed6ea0, #ec8c69, #fbb03b);
+  background-size: 300% 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.display-notes {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.display-notes p {
+  margin-top: 12rem;
+}
+
+#notes-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  z-index: 9;
+}
+
+.note {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  min-width: 200px;
+  height: 150px;
+  color: white;
+  padding: 17px 17px 10px 10px;
+}
+
+.note p {
+  width: fit-content;
+  height: fit-content;
+  margin-top: 0;
+}
+
+.note button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+
+.animate {
+  animation: shakeContainer 0.5s ease 1;
+}
+
+.vanish-note {
+  animation: vanish 0.5s ease 1;
+}
+
+@keyframes shakeContainer {
+  0% {
+    transform: translateX(2px);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-9px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes vanish {
+  0% {
+    opacity: 1;
+    width: fit-content;
+    min-width: 200px;
+    height: 150px;
+  }
+  25% {
+    opacity: 0.7;
+    width: fit-content;
+    min-width: 200px;
+    height: 150px;
+  }
+  50% {
+    opacity: 0.5;
+    width: fit-content;
+    min-width: 200px;
+    height: 150px;
+  }
+  75% {
+    opacity: 0.3;
+    width: fit-content;
+    min-width: 200px;
+    height: 150px;
+  }
+  100% {
+    opacity: 0;
+    width: fit-content;
+    min-width: 200px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-family: "Tilt Neon", sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .create-notes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(209, 220, 231);
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .display-notes {
+    width: 100%;
+    height: fit-content;
+    padding: 30px;
+  }
+
+  textarea {
+    width: 15em;
+    height: 10em;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px 0px #803636;
+  }
+}
